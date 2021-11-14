@@ -87,7 +87,7 @@ struct FloatType
     {
         if (rhs == 0.f)
         {
-            std::cout << "\nwarning, floating point division by zero returns 'inf' !" << std::endl;
+            std::cout << std::endl << "warning, floating point division by zero returns 'inf' !" << std::endl;
         }
         return lhs / rhs;
     }
@@ -102,7 +102,7 @@ struct DoubleType
     {
         if (rhs == 0.0)
         {
-            std::cout << "\nwarning, floating point division by zero returns 'inf' !" << std::endl;
+            std::cout << std::endl << "warning, floating point division by zero returns 'inf' !" << std::endl;
         }
         return lhs / rhs;
     }
