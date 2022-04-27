@@ -419,10 +419,11 @@ DoubleType& DoubleType::powInternal(const double exp )
 
 struct Point
 {
-    Point(IntType& x_, IntType& y_) : x(x_), y(y_){}
-    Point(FloatType& x_, FloatType& y_) : x(x_), y(y_){}
-    Point(DoubleType& x_, DoubleType& y_) : x(static_cast<float>(x_)), y(static_cast<float>(y_)){}
     Point(float x_, float y_) : x(x_), y(y_){}
+    Point(IntType& x_, IntType& y_) : Point(static_cast<float>(x_), static_cast<float>(y_)){}
+    Point(FloatType& x_, FloatType& y_) : Point(static_cast<float>(x_), static_cast<float>(y_)){}
+    Point(DoubleType& x_, DoubleType& y_) : Point(static_cast<float>(x_), static_cast<float>(y_)){}
+    
     Point& multiply(float m)
     {
         x *= m;
