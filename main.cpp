@@ -230,7 +230,6 @@ struct Numeric
 {
     using Type = T;
     explicit Numeric(Type v) : value(std::make_unique<Type>(v)) {}
-    //Numeric(const Numeric<T>& other) : value(std::make_unique<Type>(other)) { }
 
     Numeric& operator+= (const Type& val)
     {
@@ -322,7 +321,6 @@ struct Numeric<double>
 {
     using Type = double;
     explicit Numeric(Type v) : value(std::make_unique<Type>(v)) {}
-    //Numeric(const Numeric<Type>& other) : value(std::make_unique<Type>(other)) { }
 
     Numeric& operator+= (const Type& val)
     {
@@ -382,11 +380,6 @@ struct Point
 {
     template <typename T>
     Point(const T& x_, const T& y_) : x(static_cast<float>(x_)), y(static_cast<float>(y_)) {}
-
-    /*
-    template <typename T, typename T2>
-    Point(const T& x_, const T2& y_) : x(static_cast<float>(x_)), y(static_cast<float>(y_)) {}
-    */
 
     Point& multiply(float m)
     {
