@@ -381,12 +381,11 @@ private:
 struct Point
 {
     template <typename T>
-    Point(T x_, T y_) : x(static_cast<float>(x_)), y(static_cast<float>(y_)) {}
+    Point(const T& x_, const T& y_) : x(static_cast<float>(x_)), y(static_cast<float>(y_)) {}
 
-    /*
+    
     template <typename T, typename T2>
-    Point(T x_, T2 y_) : x(static_cast<float>(x_)), y(static_cast<float>(y_)) {}
-    */
+    Point(const T& x_, const T2& y_) : x(static_cast<float>(x_)), y(static_cast<float>(y_)) {}
 
     Point& multiply(float m)
     {
@@ -512,7 +511,7 @@ void part4()
 
     // Point tests with float
     std::cout << "Point tests with float argument:" << std::endl;
-    Point p0(static_cast<float>(ft2), floatMul);
+    Point p0(ft2, floatMul);
     p0.toString();
     std::cout << "Multiplication factor: " << floatMul << std::endl;
     p0.multiply(floatMul);
@@ -521,7 +520,7 @@ void part4()
 
     // Point tests with FloatType
     std::cout << "Point tests with FloatType argument:" << std::endl;
-    Point p1(static_cast<float>(ft2), static_cast<float>(ft2));
+    Point p1(ft2, ft2);
     p1.toString();
     std::cout << "Multiplication factor: " << ft2 << std::endl;
     p1.multiply(ft2);
@@ -530,7 +529,7 @@ void part4()
 
     // Point tests with DoubleType
     std::cout << "Point tests with DoubleType argument:" << std::endl;
-    Point p2(static_cast<float>(ft2), static_cast<float>(dt2));
+    Point p2(ft2, dt2);
     p2.toString();
     std::cout << "Multiplication factor: " << dt2 << std::endl;
     p2.multiply(dt2);
@@ -539,7 +538,7 @@ void part4()
 
     // Point tests with IntType
     std::cout << "Point tests with IntType argument:" << std::endl;
-    Point p3(static_cast<float>(ft2), static_cast<float>(dt2));
+    Point p3(ft2, dt2);
     p3.toString();
     std::cout << "Multiplication factor: " << it2 << std::endl;
     p3.multiply(it2);
