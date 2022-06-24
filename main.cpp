@@ -250,11 +250,6 @@ struct Numeric
     template<typename P>
     Numeric& operator/= (const P& val)
     {
-        /*
-            // need to add to this template to prevent dividing by zero and warn about floating point division by zero
-            if(val == 0.0f)
-                std::cout << "warning: floating point division by zero!\n";
-        */
         if (std::is_same<Type, int>::value)
         {
             // Type is int
