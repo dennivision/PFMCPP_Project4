@@ -383,9 +383,10 @@ struct Point
     template <typename T>
     Point(const T& x_, const T& y_) : x(static_cast<float>(x_)), y(static_cast<float>(y_)) {}
 
-    
+    /*
     template <typename T, typename T2>
     Point(const T& x_, const T2& y_) : x(static_cast<float>(x_)), y(static_cast<float>(y_)) {}
+    */
 
     Point& multiply(float m)
     {
@@ -445,7 +446,7 @@ void part3()
     it -= static_cast<int>(ft);
     std::cout << "The result of IntType divided by 3.14 multiplied by DoubleType minus FloatType is: " << it << std::endl;
 
-    std::cout << "An operation followed by attempts to divide by 0, which are ignored and warns user: " << std::endl;
+    std::cout << "An operation followed by attempts to divide by 0, which are ignored and warns user:" << std::endl;
 
     it *= it;
     it /= 0;
@@ -478,7 +479,7 @@ void part4()
     Numeric dtExp(2.0);
 
     // Power tests with FloatType
-    std::cout << "Power tests with FloatType " << std::endl;
+    std::cout << "Power tests with FloatType" << std::endl;
     std::cout << "pow(ft1, floatExp) = " << ft1 << "^" << floatExp << " = " << ft1.pow(floatExp) << std::endl;
     std::cout << "pow(ft1, itExp) = " << ft1 << "^" << itExp << " = " << ft1.pow(itExp) << std::endl;
     std::cout << "pow(ft1, ftExp) = " << ft1 << "^" << ftExp << " = " << ft1.pow(ftExp) << std::endl;
@@ -486,7 +487,7 @@ void part4()
     std::cout << "---------------------\n" << std::endl;
 
     // Power tests with DoubleType
-    std::cout << "Power tests with DoubleType " << std::endl;
+    std::cout << "Power tests with DoubleType" << std::endl;
     std::cout << "pow(dt1, doubleExp) = " << dt1 << "^" << doubleExp << " = " << dt1.pow(intExp) << std::endl;
     std::cout << "pow(dt1, itExp) = " << dt1 << "^" << itExp << " = " << dt1.pow(itExp) << std::endl;
     std::cout << "pow(dt1, ftExp) = " << dt1 << "^" << ftExp << " = " << dt1.pow(ftExp) << std::endl;
@@ -494,7 +495,7 @@ void part4()
     std::cout << "---------------------\n" << std::endl;
 
     // Power tests with IntType
-    std::cout << "Power tests with IntType " << std::endl;
+    std::cout << "Power tests with IntType" << std::endl;
     std::cout << "pow(it1, intExp) = " << it1 << "^" << intExp << " = " << it1.pow(intExp) << std::endl;
     std::cout << "pow(it1, itExp) = " << it1 << "^" << itExp << " = " << it1.pow(itExp) << std::endl;
     std::cout << "pow(it1, ftExp) = " << it1 << "^" << ftExp << " = " << it1.pow(ftExp) << std::endl;
@@ -511,7 +512,7 @@ void part4()
 
     // Point tests with float
     std::cout << "Point tests with float argument:" << std::endl;
-    Point p0(ft2, floatMul);
+    Point p0(static_cast<float>(ft2), floatMul);
     p0.toString();
     std::cout << "Multiplication factor: " << floatMul << std::endl;
     p0.multiply(floatMul);
@@ -529,7 +530,7 @@ void part4()
 
     // Point tests with DoubleType
     std::cout << "Point tests with DoubleType argument:" << std::endl;
-    Point p2(ft2, dt2);
+    Point p2(static_cast<float>(ft2), static_cast<float>(dt2));
     p2.toString();
     std::cout << "Multiplication factor: " << dt2 << std::endl;
     p2.multiply(dt2);
@@ -538,7 +539,7 @@ void part4()
 
     // Point tests with IntType
     std::cout << "Point tests with IntType argument:" << std::endl;
-    Point p3(ft2, dt2);
+    Point p3(static_cast<float>(ft2), static_cast<float>(dt2));
     p3.toString();
     std::cout << "Multiplication factor: " << it2 << std::endl;
     p3.multiply(it2);
@@ -719,7 +720,7 @@ int main()
     std::cout << "Initial value of dt: " << dt << std::endl;
     std::cout << "Initial value of it: " << it << std::endl;
     // --------
-    std::cout << "Use of function concatenation (mixed type arguments) " << std::endl;
+    std::cout << "Use of function concatenation (mixed type arguments)" << std::endl;
     dt *= it;
     dt /= static_cast<double>(5.0f);
     dt += static_cast<double>(ft);
@@ -729,7 +730,7 @@ int main()
 
     // Intercept division by 0
     // --------
-    std::cout << "Intercept division by 0 " << std::endl;
+    std::cout << "Intercept division by 0" << std::endl;
 
     std::cout << "New value of it = it / 0 = " << (it /= 0) << std::endl;
 
